@@ -1,0 +1,229 @@
+1) Arithmetic Operators
+python
+Copy code
+a, b = 10, 3
+print(f"Addition: {a + b}")
+print(f"Subtraction: {a - b}")
+print(f"Multiplication: {a * b}")
+print(f"Division: {a / b}")
+print(f"Modulus: {a % b}")
+print(f"Exponent: {a ** b}")
+print(f"Floor Division: {a // b}")
+2) Find Greatest Number Among Three
+python
+Copy code
+def greatest_of_three(x, y, z):
+    return max(x, y, z)
+
+print(greatest_of_three(10, 20, 15))
+3) Sum from 5 to 15
+python
+Copy code
+sum_ = 0
+for i in range(5, 16):
+    sum_ += i
+print(sum_)
+4) Factorial of a Number
+python
+Copy code
+def factorial(n):
+    result = 1
+    for i in range(1, n+1):
+        result *= i
+    return result
+
+print(factorial(5))
+5) Pattern Printing
+python
+Copy code
+for i in range(1, 6):
+    print("* " * i)
+6) Sum and Average of Array
+python
+Copy code
+arr = [1, 2, 3, 4, 5]
+sum_ = sum(arr)
+avg = sum_ / len(arr)
+print(f"Sum: {sum_}, Average: {avg}")
+7) Prime Number Check
+python
+Copy code
+def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+print(is_prime(7))
+8) Recursive Fibonacci Series
+python
+Copy code
+def fibonacci(n):
+    if n <= 1:
+        return n
+    return fibonacci(n-1) + fibonacci(n-2)
+
+for i in range(10):
+    print(fibonacci(i), end=" ")
+9) Palindrome Check
+python
+Copy code
+def is_palindrome(s):
+    return s == s[::-1]
+
+print(is_palindrome("radar"))
+10) Sum with Variable Length Arguments
+python
+Copy code
+def sum_of_numbers(*args):
+    return sum(args)
+
+print(sum_of_numbers(1, 2, 3, 4, 5))
+11) Remove Duplicates from List
+python
+Copy code
+lst = [1, 2, 3, 2, 4, 5, 4]
+unique_lst = list(set(lst))
+print(unique_lst)
+12) Square of Numbers Using List Comprehension
+python
+Copy code
+squares = [x**2 for x in range(1, 11)]
+print(squares)
+13) Element-wise Sum of Tuples
+python
+Copy code
+t1, t2, t3 = (1, 2, 3, 4), (3, 5, 2, 1), (2, 2, 3, 1)
+sum_tuple = tuple(map(sum, zip(t1, t2, t3)))
+print(sum_tuple)
+14) Unique Items from Two Sets
+python
+Copy code
+set1, set2 = {1, 2, 3, 4}, {3, 4, 5, 6}
+unique_items = set1.symmetric_difference(set2)
+print(unique_items)
+15) Dictionary with Even Ages
+python
+Copy code
+original_dict = {'jack': 38, 'michael': 48, 'guido': 57, 'john': 33}
+even_age_dict = {k: v for k, v in original_dict.items() if v % 2 == 0}
+print(even_age_dict)
+16) Remove Spaces from String
+python
+Copy code
+s = "Python is very easy"
+no_space_str = s.replace(" ", "")
+print(no_space_str)
+17) Simple Interest Calculation
+python
+Copy code
+p = float(input("Enter principal amount: "))
+r = float(input("Enter rate of interest: "))
+t = float(input("Enter time in years: "))
+si = (p * r * t) / 100
+print(f"Simple Interest is: {si:.2f}")
+18) Circle Class
+python
+Copy code
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+    
+    def area(self):
+        return 3.1416 * self.radius**2
+    
+    def perimeter(self):
+        return 2 * 3.1416 * self.radius
+
+c = Circle(5)
+print(c.area())
+print(c.perimeter())
+19) Person and Student Class
+python
+Copy code
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+class Student(Person):
+    def __init__(self, name, age, rollno, stream):
+        super().__init__(name, age)
+        self.rollno = rollno
+        self.stream = stream
+
+    def display(self):
+        print(f"Name: {self.name}, Age: {self.age}, Roll No: {self.rollno}, Stream: {self.stream}")
+
+s = Student("John", 21, "123", "Computer Science")
+s.display()
+20) Count Words in a File
+python
+Copy code
+with open("file.txt", "r") as file:
+    content = file.read()
+    word_count = len(content.split())
+print(word_count)
+21) ZeroDivisionError Handling
+python
+Copy code
+try:
+    a, b = 5, 0
+    result = a / b
+except ZeroDivisionError:
+    print("Division by zero is not allowed.")
+22) Lambda in Map Function
+python
+Copy code
+nums = [1, 2, 3, 4, 5]
+squared = list(map(lambda x: x**2, nums))
+print(squared)
+23) Lambda in Filter Function
+python
+Copy code
+nums = [1, 2, 3, 4, 5]
+even_nums = list(filter(lambda x: x % 2 == 0, nums))
+print(even_nums)
+24) Class and Static Methods
+python
+Copy code
+class MyClass:
+    @classmethod
+    def class_method(cls):
+        print("Class method called.")
+    
+    @staticmethod
+    def static_method():
+        print("Static method called.")
+
+MyClass.class_method()
+MyClass.static_method()
+25) GUI Application to Add Two Numbers
+python
+Copy code
+import tkinter as tk
+
+def add_numbers():
+    result = int(entry1.get()) + int(entry2.get())
+    result_label.config(text=f"Result: {result}")
+
+app = tk.Tk()
+app.title("Add Two Numbers")
+
+tk.Label(app, text="Number 1:").grid(row=0, column=0)
+entry1 = tk.Entry(app)
+entry1.grid(row=0, column=1)
+
+tk.Label(app, text="Number 2:").grid(row=1, column=0)
+entry2 = tk.Entry(app)
+entry2.grid(row=1, column=1)
+
+add_button = tk.Button(app, text="Add", command=add_numbers)
+add_button.grid(row=2, column=1)
+
+result_label = tk.Label(app, text="Result:")
+result_label.grid(row=3, column=1)
+
+app.mainloop()
